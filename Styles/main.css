@@ -1,0 +1,175 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(45, 45, 45);
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 32px;
+  border-radius: 50px;
+  border: none;
+}
+.hidden-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.game-icons {
+  display: flex;
+}
+.game-icons div {
+  display: flex;
+  margin: 15px;
+  border: solid;
+  border-radius: 50%;
+  border-width: 5px;
+  border-color: white;
+}
+.rock-img,
+.paper-img,
+.scissor-img {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  background-color: rgb(25, 25, 25);
+  border-radius: 50%;
+  padding: 15px;
+}
+.css-win-status,
+.css-match-status,
+.css-score-board {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.reset-button {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  border: solid;
+  padding: 25px 25px;
+  border-radius: 50%;
+  border-width: 5px;
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+.reset-button:hover,
+.rock-img:hover,
+.paper-img:hover,
+.scissor-img:hover {
+  background-color: rgb(40, 40, 40);
+}
+.reset-button:active,
+.rock-img:active,
+.paper-img:active,
+.scissor-img:active {
+  background-color: rgb(25, 25, 25);
+}
+
+.Main-div-win-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.laughing-emoji,
+.crying-emoji,
+.neutral-emoji {
+  height: 55px;
+  padding: 0;
+  margin: 0;
+}
+
+.Main-div-match-status {
+  display: flex;
+  border: 2px solid white;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.match-status-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 0;
+  border-left: 1px solid white;
+}
+
+.match-status-column:first-child {
+  border-left: none;
+}
+
+.match-status-player {
+  margin-bottom: 10px;
+  border-bottom: 1px solid white;
+}
+
+.match-status-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hand-action-style {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(25, 25, 25);
+  border-radius: 50%;
+  padding: 15px;
+  cursor: default;
+}
+
+.score-board {
+  display: flex;
+  border: 2px solid white;
+  border-radius: 15px;
+  overflow: hidden; 
+  padding: 5px;
+  justify-content: space-around; 
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.score-board-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 0 5px; 
+  border-left: 1px solid white;
+}
+
+.score-board-column:first-child {
+  border-left: none; 
+}
+
+.score-board-wins,
+.score-board-draws,
+.score-board-losses {
+  margin-bottom: 10px; 
+  font-weight: bold;
+  font-size: 1.2em; 
+}
+
+.total-wins,
+.total-draws,
+.total-losses {
+  font-size: 1.5em; 
+}
+
+.main-div-score-board{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPS-V6</title>
+    <link rel="stylesheet" href="Styles\home.css" />
+    <link rel="stylesheet" href="Styles\main.css" />
+  </head>
+  <body>
+    <div class="main">
+      <header>
+        <p>Rock Paper Scissor</p>
+      </header>
+      <div class="game-icons">
+        <div>
+          <img
+            src="Images/rock-emoji.png"
+            class="rock-img"
+            onclick="playGame('Rock');"
+          />
+        </div>
+        <div>
+          <img
+            src="Images/paper-emoji.png"
+            class="paper-img"
+            onclick="playGame('Paper')"
+          />
+        </div>
+        <div>
+          <img
+            src="Images/scissors-emoji.png"
+            class="scissor-img"
+            onclick="playGame('Scissor')"
+          />
+        </div>
+      </div>
+      <div class="hidden-part js-hidden-part">
+        <div class="Main-div-match-status">
+          <div class="match-status-column">
+            <div class="match-status-player">You</div>
+            <div class="match-status-score">
+              <img
+                src="Images/rock-emoji.png"
+                class="js-rock-human hand-action-style"
+              />
+              <img
+                src="Images/paper-emoji.png"
+                class="js-paper-human hand-action-style"
+              />
+              <img
+                src="Images/scissors-emoji.png"
+                class="js-scissor-human hand-action-style"
+              />
+            </div>
+          </div>
+          <div class="match-status-column">
+            <div class="match-status-player">Computer</div>
+            <div class="match-status-score">
+              <img
+                src="Images/rock-emoji.png"
+                class="js-rock-computer hand-action-style"
+              />
+              <img
+                src="Images/paper-emoji.png"
+                class="js-paper-computer hand-action-style"
+              />
+              <img
+                src="Images/scissors-emoji.png"
+                class="js-scissor-computer hand-action-style"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="Main-div-win-status">
+          <div>
+            <p class="win-status css-win-status"></p>
+          </div>
+          <div>
+            <img src="Images/laughing-emoji.png" class="laughing-emoji" />
+          </div>
+          <div>
+            <img src="Images/crying-emoji.png" class="crying-emoji" />
+          </div>
+          <div>
+            <img src="Images/neutral-emoji.png" class="neutral-emoji" />
+          </div>
+        </div>
+        <div class="main-div-score-board">
+          <div class="score-board">
+            <div class="score-board-column">
+              <div class="score-board-wins">Wins</div>
+              <div class="total-wins"></div>
+            </div>
+            <div class="score-board-column">
+              <div class="score-board-draws">Draws</div>
+              <div class="total-draws"></div>
+            </div>
+            <div class="score-board-column">
+              <div class="score-board-losses">Losses</div>
+              <div class="total-losses"></div>
+            </div>
+          </div>
+
+          <!-- <p class="js-score-board css-score-board"></p> -->
+        </div>
+      </div>
+
+      <div>
+        <button onclick="resetScore()" class="reset-button">
+          Reset<br />Score
+        </button>
+      </div>
+      <footer>
+        <p>Enjoy the Game</p>
+      </footer>
+    </div>
+    <img src="Images/Luma 5.5.png" class="bottom-right-image" alt="Bottom Right Image">
+
+    <script src="JS\home.js"></script>
+  </body>
+</html>
