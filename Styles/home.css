@@ -2,17 +2,13 @@ body{
     background-color: rgb(25, 25, 25);
     color: white;
     font-family:Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  
 }
 header,footer
 {
     font-size: xx-large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  
 
 
 }
@@ -30,5 +26,4 @@ p{
     border-radius: 50%;
     right: 10px; 
     width: 40px; 
-    height: auto; 
 }   

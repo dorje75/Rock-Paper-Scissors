@@ -31,7 +31,7 @@
           <img
             src="Images/scissors-emoji.png"
             class="scissor-img"
-            onclick="playGame('Scissor')"
+            onclick="playGame('Scissors')"
           />
         </div>
       </div>
@@ -39,36 +39,18 @@
         <div class="Main-div-match-status">
           <div class="match-status-column">
             <div class="match-status-player">You</div>
-            <div class="match-status-score">
-              <img
-                src="Images/rock-emoji.png"
-                class="js-rock-human hand-action-style"
-              />
-              <img
-                src="Images/paper-emoji.png"
-                class="js-paper-human hand-action-style"
-              />
-              <img
-                src="Images/scissors-emoji.png"
-                class="js-scissor-human hand-action-style"
-              />
+            <div class="match-status-score ">
+              <p class="js-player-match-status">
+                <!-- human handAction will be displayed here -->
+              </p>
             </div>
           </div>
           <div class="match-status-column">
             <div class="match-status-player">Computer</div>
             <div class="match-status-score">
-              <img
-                src="Images/rock-emoji.png"
-                class="js-rock-computer hand-action-style"
-              />
-              <img
-                src="Images/paper-emoji.png"
-                class="js-paper-computer hand-action-style"
-              />
-              <img
-                src="Images/scissors-emoji.png"
-                class="js-scissor-computer hand-action-style"
-              />
+              <p class="js-computer-match-status">
+                <!-- computer handAction will be displayed here  -->
+              </p>
             </div>
           </div>
         </div>
@@ -76,29 +58,23 @@
           <div>
             <p class="win-status css-win-status"></p>
           </div>
-          <div>
-            <img src="Images/laughing-emoji.png" class="laughing-emoji" />
-          </div>
-          <div>
-            <img src="Images/crying-emoji.png" class="crying-emoji" />
-          </div>
-          <div>
-            <img src="Images/neutral-emoji.png" class="neutral-emoji" />
+          <div class="js-inser-emoji">
+            <!-- Emoji will be inserted here -->
           </div>
         </div>
         <div class="main-div-score-board">
           <div class="score-board">
             <div class="score-board-column">
               <div class="score-board-wins">Wins</div>
-              <div class="total-wins"></div>
+              <p class="total-wins"></p>
             </div>
             <div class="score-board-column">
               <div class="score-board-draws">Draws</div>
-              <div class="total-draws"></div>
+              <p class="total-draws"></p>
             </div>
             <div class="score-board-column">
               <div class="score-board-losses">Losses</div>
-              <div class="total-losses"></div>
+              <p class="total-losses"></p>
             </div>
           </div>
 

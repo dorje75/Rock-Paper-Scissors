@@ -8,49 +8,23 @@ const hiddenPart = document.querySelector(".js-hidden-part");
 const matchStatusColumn = document.querySelector(".Main-div-match-status");
 matchStatusColumn.style.display = "none";
 
-const emoji = {
-  laughingEmoji: document.querySelector(".laughing-emoji"),
-  cryingEmoji: document.querySelector(".crying-emoji"),
-  neutralEmoji: document.querySelector(".neutral-emoji"),
-};
-emoji.laughingEmoji.style.display = "none";
-emoji.cryingEmoji.style.display = "none";
-emoji.neutralEmoji.style.display = "none";
-
-const handAction = {
-  rock_human: document.querySelector(".js-rock-human"),
-  paper_humman: document.querySelector(".js-paper-human"),
-  scissor_human: document.querySelector(".js-scissor-human"),
-
-  rock_computer: document.querySelector(".js-rock-computer"),
-  paper_computer: document.querySelector(".js-paper-computer"),
-  scissor_computer: document.querySelector(".js-scissor-computer"),
-};
-
-for (const key in handAction) {
-  if (handAction.hasOwnProperty(key)) {
-    handAction[key].style.display = "none";
-  }
-}
-
 const ScoreBoardTable = document.querySelector(".main-div-score-board");
-ScoreBoardTable.style.display='none';
-const scoreBoardResultl={
+ScoreBoardTable.style.display = "none";
+const scoreBoardResultl = {
   wins: document.querySelector(".total-wins"),
-  draws:document.querySelector(".total-draws"), 
-  losses:document.querySelector(".total-losses")
-
+  draws: document.querySelector(".total-draws"),
+  losses: document.querySelector(".total-losses"),
 };
-
 
 function roboOutput() {
+  //this wil give a random handAction for the computer
   const randomNum = Math.random();
   if (randomNum < 1 / 3) {
     return "Rock";
   } else if (randomNum < 2 / 3) {
     return "Paper";
   } else {
-    return "Scissor";
+    return "Scissors";
   }
 }
 
@@ -69,7 +43,7 @@ function playGame(UserInput) {
           result = "You lose!";
           score.losses++;
           break;
-        case "Scissor":
+        case "Scissors":
           result = "You win!";
           score.wins++;
           break;
@@ -85,13 +59,13 @@ function playGame(UserInput) {
           result = "Draw";
           score.draws++;
           break;
-        case "Scissor":
+        case "Scissors":
           result = "You lose!";
           score.losses++;
           break;
       }
       break;
-    case "Scissor":
+    case "Scissors":
       switch (botOutput) {
         case "Rock":
           result = "You lose!";
@@ -101,7 +75,7 @@ function playGame(UserInput) {
           result = "You win!";
           score.wins++;
           break;
-        case "Scissor":
+        case "Scissors":
           result = "Draw";
           score.draws++;
           break;
@@ -126,64 +100,42 @@ function resetScore() {
 }
 
 function updateWinStatus(result) {
-  hiddenPart.style.display = "flex";
   document.querySelector(".win-status").innerHTML = `Result: ${result}`;
-  emoji.laughingEmoji.style.display = "none";
-  emoji.cryingEmoji.style.display = "none";
-  emoji.neutralEmoji.style.display = "none";
-  if (result === "You lose!") {
-    emoji.laughingEmoji.style.display = "flex";
-  } else if (result === "You win!") {
-    emoji.cryingEmoji.style.display = "flex";
-  } else {
-    emoji.neutralEmoji.style.display = "flex";
+  const InsertEmoji = document.querySelector(".js-inser-emoji");
+
+  let appropriateEmoji;
+
+  switch (result) {
+    case "You lose!":
+      appropriateEmoji = "laughing";
+      break;
+    case "You win!":
+      appropriateEmoji = "crying";
+      break;
+    default:
+      appropriateEmoji = "neutral";
+      break;
   }
+
+  InsertEmoji.innerHTML = `<img src="Images/${appropriateEmoji}-emoji.png" class="resultant-emoji" />`;
 }
 
 function updateScoreElement() {
-  hiddenPart.style.display = "flex";
-  ScoreBoardTable.style.display='flex';
+  ScoreBoardTable.style.display = "flex";
 
-  scoreBoardResultl.wins.innerText=`${score.wins}`;
-  scoreBoardResultl.draws.innerText=`${score.draws}`;
-  scoreBoardResultl.losses.innerText=`${score.losses}`;
-  // document.querySelector(
-  //   ".js-score-board"
-  // ).innerHTML = `Wins: ${score.wins} Losses: ${score.losses} Draws: ${score.draws}`;
+  scoreBoardResultl.wins.innerHTML = `${score.wins}`;
+  scoreBoardResultl.draws.innerHTML = `${score.draws}`;
+  scoreBoardResultl.losses.innerHTML = `${score.losses}`;
 }
 
 function updateMatchStatus(UserInput, botOutput) {
-  hiddenPart.style.display = "flex";
   matchStatusColumn.style.display = "flex";
+  const userScoreDiplay = document.querySelector(".js-player-match-status");
+  const computerScoreDisplay = document.querySelector(
+    ".js-computer-match-status"
+  );
 
-  for (const key in handAction) {
-    if (handAction.hasOwnProperty(key)) {
-      handAction[key].style.display = "none";
-    }
-  }
-
-  switch (UserInput) {
-    case "Rock":
-      handAction.rock_human.style.display = "flex";
-      break;
-    case "Paper":
-      handAction.paper_humman.style.display = "flex";
-      break;
-    case "Scissor":
-      handAction.scissor_human.style.display = "flex";
-      break;
-  }
-
-  switch (botOutput) {
-    case "Rock":
-      handAction.rock_computer.style.display = "flex";
-      break;
-    case "Paper":
-      handAction.paper_computer.style.display = "flex";
-      break;
-    case "Scissor":
-      handAction.scissor_computer.style.display = "flex";
-      break;
-  }
+  userScoreDiplay.innerHTML = `<img src="Images/${UserInput.toLowerCase()}-emoji.png" class="js-rock-human hand-action-style"/>`;
+  computerScoreDisplay.innerHTML = `<img src="Images/${botOutput}-emoji.png" class="js-rock-computer hand-action-style"/>`;
 }
 updateScoreElement();
