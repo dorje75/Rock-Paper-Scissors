@@ -39,7 +39,7 @@
         <div class="Main-div-match-status">
           <div class="match-status-column">
             <div class="match-status-player">You</div>
-            <div class="match-status-score ">
+            <div class="match-status-score">
               <p class="js-player-match-status">
                 <!-- human handAction will be displayed here -->
               </p>
@@ -82,16 +82,24 @@
         </div>
       </div>
 
-      <div>
+      <div class="button-row">
         <button onclick="resetScore()" class="reset-button">
           Reset<br />Score
+        </button>
+        <button onclick="autoPlay();" class="auto-play-button">Auto<br />Play</button>
+        <button class="auto-play-matches">
+          <!-- will show the autoMatch -->
         </button>
       </div>
       <footer>
         <p>Enjoy the Game</p>
       </footer>
     </div>
-    <img src="Images/Luma 5.5.png" class="bottom-right-image" alt="Bottom Right Image">
+    <img
+      src="Images/Luma 5.5.png"
+      class="bottom-right-image"
+      alt="Bottom Right Image"
+    />
 
     <script src="JS\home.js"></script>
   </body>

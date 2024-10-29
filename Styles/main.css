@@ -28,7 +28,7 @@
   margin: 15px;
   border: solid;
   border-radius: 50%;
-  border-width: 5px;
+  border-width: 2px;
   border-color: white;
 }
 .rock-img,
@@ -48,31 +48,43 @@
   font-weight: bold;
 }
 
-.reset-button {
+.reset-button,
+.auto-play-button,
+.auto-play-matches {
   background-color: rgb(25, 25, 25);
   color: white;
   border: solid;
-  padding: 25px 25px;
+  padding: 20px;
   border-radius: 50%;
-  border-width: 5px;
+  border-width: 2px;
   cursor: pointer;
   font-size: large;
   font-weight: bold;
   transition: background-color 0.2s;
 }
+.auto-play-matches {
+  border-radius: 10px;
+  margin-left: 5px;
+
+  /* padding: 5px; */
+}
 .reset-button:hover,
 .rock-img:hover,
 .paper-img:hover,
-.scissor-img:hover {
+.scissor-img:hover,
+.auto-play-button:hover {
   background-color: rgb(40, 40, 40);
 }
 .reset-button:active,
 .rock-img:active,
 .paper-img:active,
-.scissor-img:active {
+.scissor-img:active,
+.auto-play-button:active {
   background-color: rgb(25, 25, 25);
 }
-
+.auto-play-button {
+  margin-left: 5px;
+}
 .Main-div-win-status {
   display: flex;
   justify-content: center;
@@ -130,9 +142,9 @@
   display: flex;
   border: 2px solid white;
   border-radius: 15px;
-  overflow: hidden; 
+  overflow: hidden;
   padding: 5px;
-  justify-content: space-around; 
+  justify-content: space-around;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -142,32 +154,37 @@
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  margin: 0 5px; 
+  margin: 0 5px;
   border-left: 1px solid white;
 }
 
 .score-board-column:first-child {
-  border-left: none; 
+  border-left: none;
 }
 
 .score-board-wins,
 .score-board-draws,
 .score-board-losses {
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
   font-weight: bold;
-  font-size: 1.2em; 
+  font-size: 1.2em;
 }
 
 .total-wins,
 .total-draws,
 .total-losses {
-  font-size: 1.5em; 
+  font-size: 1.5em;
 }
 
-.main-div-score-board{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
+.main-div-score-board {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.button-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -16,8 +16,10 @@ const scoreBoardResultl = {
   losses: document.querySelector(".total-losses"),
 };
 
+const TotalAutoPlayMatches = document.querySelector(".auto-play-matches"); //div which shows the matches playes by computer vs computer
+TotalAutoPlayMatches.style.display = "none";
+
 function roboOutput() {
-  //this wil give a random handAction for the computer
   const randomNum = Math.random();
   if (randomNum < 1 / 3) {
     return "Rock";
@@ -93,10 +95,6 @@ function resetScore() {
   score = { wins: 0, losses: 0, draws: 0 };
   localStorage.removeItem("score");
   updateScoreElement();
-
-  if (hiddenPart) {
-    hiddenPart.style.display = "none";
-  }
 }
 
 function updateWinStatus(result) {
@@ -138,4 +136,29 @@ function updateMatchStatus(UserInput, botOutput) {
   userScoreDiplay.innerHTML = `<img src="Images/${UserInput.toLowerCase()}-emoji.png" class="js-rock-human hand-action-style"/>`;
   computerScoreDisplay.innerHTML = `<img src="Images/${botOutput}-emoji.png" class="js-rock-computer hand-action-style"/>`;
 }
+
+let isAutoPlaying = false;
+let intervalId;
+function autoPlay() {
+  if (!isAutoPlaying) {
+    let totalAutoMatch = 1;
+    document.querySelector(".auto-play-button").innerHTML = `Stop</br>Game`;
+    TotalAutoPlayMatches.style.display = "flex";
+    TotalAutoPlayMatches.innerHTML = `Match Starting`;
+    intervalId = setInterval(() => {
+      TotalAutoPlayMatches.innerHTML = `Match[${totalAutoMatch}]`;
+      const playerMove = roboOutput();
+      playGame(playerMove);
+      totalAutoMatch++;
+    }, 1000);
+    isAutoPlaying = true;
+  } else {
+    clearInterval(intervalId);
+    isAutoPlaying = false;
+    TotalAutoPlayMatches.style.display = "none";
+    document.querySelector(".auto-play-button").innerHTML = "Auto</br>Play";
+    // resetScore();
+  }
+}
+
 updateScoreElement();
