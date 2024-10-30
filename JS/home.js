@@ -1,3 +1,30 @@
+const rockButtonElement = document.querySelector(".rock-img");
+const paperButtonElement = document.querySelector(".paper-img");
+const scissorButtonElement = document.querySelector(".scissor-img");
+
+const resetButtonElemenet = document.querySelector(".reset-button");
+const autoPlayButtonElement = document.querySelector(".auto-play-button");
+
+rockButtonElement.addEventListener('click',() => {
+  playGame('Rock');
+});
+
+paperButtonElement.addEventListener('click',() => {
+  playGame('Paper');
+});
+
+scissorButtonElement.addEventListener('click',() => {
+  playGame('Scissors')
+});
+
+resetButtonElemenet.addEventListener('click',() => {
+  resetScore();
+});
+
+autoPlayButtonElement.addEventListener('click',() => {
+  autoPlay();
+});
+
 let score = JSON.parse(localStorage.getItem("score")) || {
   wins: 0,
   losses: 0,
